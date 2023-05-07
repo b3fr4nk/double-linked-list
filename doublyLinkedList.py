@@ -6,7 +6,6 @@ class DoublyLinkedList:
     self.head = None
     self.tail = None
 
-  # TODO: append()
   #Add to the end of the linked list
   def append(self, new_data):
     if self.head is None:#empty linked list
@@ -24,7 +23,6 @@ class DoublyLinkedList:
       #set tail to new node
       self.tail = new_node
 
-  # TODO: insert()
   def insert(self, item, index):
     curr_index = 0
     curr_node = self.head
@@ -41,8 +39,6 @@ class DoublyLinkedList:
 
     curr_node.previous = new_node
     
-
-  # TODO: remove()
   def remove(self, value):
     node = self.head
     while node.data != value:
@@ -54,31 +50,21 @@ class DoublyLinkedList:
     prev_node.next = next_node
     next_node.previous = prev_node
 
-  # TODO: update()
-  #Find and existing node with data == item and update with new value
-  #traverse to find node
-  #replace the data with value
-  #hint: look at find() for singly linked list
   def update(self, item, value):
     node = self.head
     while node.data != item:
       node = node.next
       if node is None:
         raise KeyError('item is not in linked list')
-    
-    
 
     node.data = item
 
-  # TODO: find()
   def find(self, item):
     node = self.head
     while node.data != item:
       node = node.next
       if node is None:
         raise KeyError('item is not in linked list')
-
-    
     
     return node
 
@@ -93,7 +79,7 @@ class DoublyLinkedList:
 
     return f'{items}'
 
-# tesing
+# testing
 node0 = Node(0)
 node1 = Node(1)
 node2 = Node(2)
